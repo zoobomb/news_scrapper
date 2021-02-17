@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def get_news(origin_url, search_url, limit=5):
+def get_news(origin_url, search_url, limit):
     news_result = requests.get(search_url)
     news_soup = BeautifulSoup(news_result.text, "html.parser")
     news_items = news_soup.select('div[class="xrnccd"]')

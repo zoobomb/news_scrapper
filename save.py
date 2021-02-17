@@ -1,10 +1,12 @@
 import csv
 
-def save_to_file(jobs):
-    file=open("jobs.csv",mode="w")  
-    writer = csv.writer(file)   
-    writer.writerow(["title","company","location","link"])
-    for job in jobs:
-    writer.writerow(list(job.values()))
+
+def save_to_file(news):
+    file = open("google_news.csv", mode="w")
+    writer = csv.writer(file)
+    writer.writerow(["link", "title", "content", "agency", "date", "time"])
+    print(news)
+    for item in news:
+        writer.writerow(list(item.values()))
+        # print(news.values())
     return
-# git rebase
